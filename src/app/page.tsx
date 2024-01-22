@@ -2,14 +2,17 @@
 
 import * as React from 'react';
 
-import { ResizablePanel } from '@/ui/resizable';
-
-import DefaultLayout from '@/components/default-layout';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+
+    const router = useRouter();
+
+    React.useEffect(() => {
+        router.push('/dashboard');
+    },[]);
+
     return (
-        <DefaultLayout>
-            <ResizablePanel defaultSize={910}></ResizablePanel>
-        </DefaultLayout>
+        <></>
     );
 }
