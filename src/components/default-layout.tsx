@@ -101,42 +101,42 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
                                 title: "Inbox",
                                 label: "128",
                                 icon: Inbox,
-                                variant: "default",
+                                variant: tab === 1 ?  "default" : "secondary",
                                 tab: 1,
                             },
                             {
                                 title: "Drafts",
                                 label: "9",
                                 icon: File,
-                                variant: "default",
+                                variant: tab === 2 ?  "default" : "secondary",
                                 tab: 2
                             },
                             {
                                 title: "Sent",
                                 label: "",
                                 icon: Send,
-                                variant: "default",
+                                variant: tab === 3 ?  "default" : "secondary",
                                 tab: 3
                             },
                             {
                                 title: "Junk",
                                 label: "23",
                                 icon: ArchiveX,
-                                variant: "default",
+                                variant: tab === 4 ?  "default" : "secondary",
                                 tab: 4
                             },
                             {
                                 title: "Trash",
                                 label: "",
                                 icon: Trash2,
-                                variant: "default",
+                                variant: tab === 5 ?  "default" : "secondary",
                                 tab: 5
                             },
                             {
                                 title: "Archive",
                                 label: "",
                                 icon: Archive,
-                                variant: "default",
+                                variant: tab === 6 ?  "default" : "secondary",
                                 tab: 6
                             },
                         ]}
@@ -151,35 +151,35 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
                                 title: "Social",
                                 label: "972",
                                 icon: Users2,
-                                variant: "default",
+                                variant: tab === 7 ?  "default" : "secondary",
                                 tab: 7
                             },
                             {
                                 title: "Updates",
                                 label: "342",
                                 icon: AlertCircle,
-                                variant: "default",
+                                variant: tab === 8 ?  "default" : "secondary",
                                 tab: 8
                             },
                             {
                                 title: "Forums",
                                 label: "128",
                                 icon: MessagesSquare,
-                                variant: "default",
+                                variant: tab === 9 ?  "default" : "secondary",
                                 tab: 9
                             },
                             {
                                 title: "Shopping",
                                 label: "8",
                                 icon: ShoppingCart,
-                                variant: "default",
+                                variant: tab === 10 ?  "default" : "secondary",
                                 tab: 10
                             },
                             {
                                 title: "Promotions",
                                 label: "21",
                                 icon: Archive,
-                                variant: "default",
+                                variant: tab === 11 ?  "default" : "secondary",
                                 tab: 11
                             },
                         ]}

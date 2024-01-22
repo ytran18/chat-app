@@ -11,7 +11,7 @@ interface NavProps {
         title: string
         label?: string
         icon: LucideIcon
-        variant: "default" | "ghost",
+        variant: "default" | "secondary",
         tab: number,
     }[],
     handleChangeTab: (tab: number) => void,
@@ -39,9 +39,9 @@ export function Nav({ links, isCollapsed, handleChangeTab, tabActive }: NavProps
                                             <div
                                                 className={cn(
                                                     buttonVariants({ variant: link.variant, size: "icon" }),
-                                                    "h-9 w-9 text-black hover:text-white",
-                                                    link.tab == tabActive &&
-                                                    "bg-primary text-white",
+                                                    "h-9 w-9",
+                                                    link.tab === tabActive &&
+                                                    "dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white"
                                                 )}
                                             >
                                                 <link.icon className="h-4 w-4" />
@@ -62,9 +62,8 @@ export function Nav({ links, isCollapsed, handleChangeTab, tabActive }: NavProps
                                         key={index}
                                         className={cn(
                                             buttonVariants({ variant: link.variant, size: "sm" }),
-                                            'text-black hover:text-white',
-                                            link.tab == tabActive &&
-                                            "bg-primary text-white",
+                                            link.tab === tabActive &&
+                                            "dark:bg-muted dark:text-white dark:hover:bg-muted dark:hover:text-white",
                                             "justify-start"
                                         )}
                                     >
