@@ -2,11 +2,8 @@
 
 import * as React from 'react';
 
-import { TooltipProvider } from "@/ui/tooltip";
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/ui/resizable';
-import { AccountSwitcher } from '@/components/account-switcher';
+import { ResizableHandle, ResizablePanel } from '@/ui/resizable';
 import { Separator } from '@/ui/separator';
-import { Nav } from '@/components/nav';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/tabs';
 import { Input } from '@/ui/input';
 import { MailList } from '@/components/mail-list';
@@ -15,17 +12,14 @@ import { useMail } from '@/utils/use-mail';
 
 import DefaultLayout from '@/components/default-layout';
 
-import { accounts, mails } from '@/utils/data';
+import { mails } from '@/utils/data';
 
-import { AlertCircle, Archive, ArchiveX, File, Inbox, MessagesSquare, Search, Send, ShoppingCart, Trash2, Users2 } from 'lucide-react';
-
-import { cn } from '@/lib/utils';
+import { Search } from 'lucide-react';
 
 export default function page() {
 
-    const [isCollapsed, setIsCollapsed] = React.useState(false);
     const [isSelectChat, setIsSelectChat] = React.useState(false);
-    const [isShowProfile, setShowProfile] = React.useState(false);
+    const [isShowProfile, setShowProfile] = React.useState(true);
     const [width, setWidth] = React.useState(0);
     const [mail] = useMail();
 
@@ -42,6 +36,7 @@ export default function page() {
     React.useEffect(() => {
         const handleResize = () => {
             setWidth(window.innerWidth);
+            if (window.innerWidth > 1024) setShowProfile(true);
             if (window.innerWidth <= 1024 && window.innerWidth >= 1000) setShowProfile(false);
         };
     
