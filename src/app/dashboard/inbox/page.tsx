@@ -58,7 +58,7 @@ export default function page() {
 
     return (
         <DefaultLayout>
-            <ResizableHandle withHandle={width < 768 ? false : true}/>
+            <ResizableHandle disabled={width < 768 ? true : false} withHandle={width < 768 ? false : true}/>
             <ResizablePanel className={`h-full ${isSelectChat ? 'hidden' : 'block'} md:block`} defaultSize={270} maxSize={50} minSize={30}>
                 <Tabs defaultValue='all'>
                     <div className="flex items-center px-4 py-2">

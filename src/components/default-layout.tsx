@@ -106,7 +106,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
                     onExpand={() => {
                         width > 768 && setIsCollapsed(false)
                     }}
-                    className={cn((isCollapsed || width < 1024) && "max-w-[50px] h-full transition-all duration-300")}
+                    className={cn((isCollapsed || width < 1024) && "max-w-[50px] h-full transition-all duration-300 ease-in-out")}
                 >
                     <div className={cn("flex h-[52px] w-full items-center justify-center", isCollapsed ? 'h-[52px]': 'px-2')}>
                         <AccountSwitcher isCollapsed={isCollapsed} accounts={accounts} />

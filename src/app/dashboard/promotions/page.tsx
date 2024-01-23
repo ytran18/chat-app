@@ -13,7 +13,7 @@ export default function page() {
 
     return (
         <DefaultLayout>
-            <ResizableHandle withHandle={width < 768 ? false : true}/>
+            <ResizableHandle disabled={width < 768 ? true : false} withHandle={width < 768 ? false : true}/>
             <ResizablePanel className={`h-full`} defaultSize={910} minSize={30}>
                     <div className="flex items-center px-4 py-2">
                         <h1 className="text-xl font-bold">Promotions</h1>
