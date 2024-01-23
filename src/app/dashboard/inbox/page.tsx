@@ -19,8 +19,8 @@ import { Search } from 'lucide-react';
 export default function page() {
 
     const [isSelectChat, setIsSelectChat] = React.useState(false);
-    const [isShowProfile, setShowProfile] = React.useState(true);
     const [width, setWidth] = React.useState(0);
+    const [isShowProfile, setShowProfile] = React.useState(width > 1024 ? true : false);
     const [mail] = useMail();
 
 
