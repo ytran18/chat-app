@@ -45,6 +45,23 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
         setTab(tab);
     },[]);
 
+    React.useEffect(() => {
+        if (window.innerWidth < 768) setIsCollapsed(true);
+    }, []);
+    
+    React.useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) setIsCollapsed(true);
+            if (window.innerWidth >= 768) setIsCollapsed(false);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const handleChangeTab = (tab: number) => {
         setTab(tab);
 
