@@ -98,15 +98,15 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
                     defaultSize={180}
                     collapsedSize={4}
                     collapsible={true}
-                    minSize={15}
-                    maxSize={20}
+                    minSize={20}
+                    maxSize={25}
                     onCollapse={() => {
                         setIsCollapsed(true)
                     }}
                     onExpand={() => {
                         width > 768 && setIsCollapsed(false)
                     }}
-                    className={cn((isCollapsed || width < 1024) && "max-w-[50px] h-full transition-all duration-300 ease-in-out")}
+                    className={cn((isCollapsed || width < 1024) && "max-w-[50px] min-w-[50px] h-full transition-all duration-300 ease-in-out")}
                 >
                     <div className={cn("flex h-[52px] w-full items-center justify-center", isCollapsed ? 'h-[52px]': 'px-2')}>
                         <AccountSwitcher isCollapsed={isCollapsed} accounts={accounts} />
