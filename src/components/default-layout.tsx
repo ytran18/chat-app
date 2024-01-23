@@ -28,18 +28,18 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
 
     React.useEffect(() => {
         const tab = {
-            '/': 0,
-            '/dashboard/inbox': 1,
-            '/dashboard/draft': 2,
-            '/dashboard/sent': 3,
-            '/dashboard/junk': 4,
-            '/dashboard/trash': 5,
-            '/dashboard/archive': 6,
-            '/dashboard/social': 7,
-            '/dashboard/updates': 8,
-            '/dashboard/forums': 9,
-            '/dashboard/shopping': 10,
-            '/dashboard/promotions': 11,
+            '/dashboard': 1,
+            '/dashboard/inbox': 2,
+            '/dashboard/draft': 3,
+            '/dashboard/sent': 4,
+            '/dashboard/junk': 5,
+            '/dashboard/trash': 6,
+            '/dashboard/archive': 7,
+            '/dashboard/social': 8,
+            '/dashboard/updates': 9,
+            '/dashboard/forums': 10,
+            '/dashboard/shopping': 11,
+            '/dashboard/promotions': 12,
         }[pathname] || 0;
 
         setTab(tab);
@@ -49,18 +49,18 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
         setTab(tab);
 
         const navigate = {
-            1: '/dashboard/inbox',
-            2: '/dashboard/draft',
-            3: '/dashboard/sent',
-            4: '/dashboard/junk',
-            5: '/dashboard/trash',
-            6: '/dashboard/archive',
-            7: '/dashboard/social',
-            8: '/dashboard/updates',
-            9: '/dashboard/forums',
-            10: '/dashboard/shopping',
-            11: '/dashboard/promotions'
-        }[tab] || '/';
+            2: '/dashboard/inbox',
+            3: '/dashboard/draft',
+            4: '/dashboard/sent',
+            5: '/dashboard/junk',
+            6: '/dashboard/trash',
+            7: '/dashboard/archive',
+            8: '/dashboard/social',
+            9: '/dashboard/updates',
+            10: '/dashboard/forums',
+            11: '/dashboard/shopping',
+            12: '/dashboard/promotions'
+        }[tab] || '/dashboard';
 
         router.push(navigate);
     };
@@ -100,50 +100,50 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
                             {
                                 title: "Home",
                                 icon: HomeIcon,
-                                variant: tab === 0 ?  "default" : "secondary",
-                                tab: 0,
+                                variant: tab === 1 ?  "default" : "secondary",
+                                tab: 1,
                             },
                             {
                                 title: "Inbox",
                                 label: "128",
                                 icon: Inbox,
-                                variant: tab === 1 ?  "default" : "secondary",
-                                tab: 1,
+                                variant: tab === 2 ?  "default" : "secondary",
+                                tab: 2,
                             },
                             {
                                 title: "Drafts",
                                 label: "9",
                                 icon: File,
-                                variant: tab === 2 ?  "default" : "secondary",
-                                tab: 2
+                                variant: tab === 3 ?  "default" : "secondary",
+                                tab: 3
                             },
                             {
                                 title: "Sent",
                                 label: "",
                                 icon: Send,
-                                variant: tab === 3 ?  "default" : "secondary",
-                                tab: 3
+                                variant: tab === 4 ?  "default" : "secondary",
+                                tab: 4
                             },
                             {
                                 title: "Junk",
                                 label: "23",
                                 icon: ArchiveX,
-                                variant: tab === 4 ?  "default" : "secondary",
-                                tab: 4
+                                variant: tab === 5 ?  "default" : "secondary",
+                                tab: 5
                             },
                             {
                                 title: "Trash",
                                 label: "",
                                 icon: Trash2,
-                                variant: tab === 5 ?  "default" : "secondary",
-                                tab: 5
+                                variant: tab === 6 ?  "default" : "secondary",
+                                tab: 6
                             },
                             {
                                 title: "Archive",
                                 label: "",
                                 icon: Archive,
-                                variant: tab === 6 ?  "default" : "secondary",
-                                tab: 6
+                                variant: tab === 7 ?  "default" : "secondary",
+                                tab: 7
                             },
                         ]}
                     />
@@ -157,36 +157,36 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
                                 title: "Social",
                                 label: "972",
                                 icon: Users2,
-                                variant: tab === 7 ?  "default" : "secondary",
-                                tab: 7
+                                variant: tab === 8 ?  "default" : "secondary",
+                                tab: 8
                             },
                             {
                                 title: "Updates",
                                 label: "342",
                                 icon: AlertCircle,
-                                variant: tab === 8 ?  "default" : "secondary",
-                                tab: 8
+                                variant: tab === 9 ?  "default" : "secondary",
+                                tab: 9
                             },
                             {
                                 title: "Forums",
                                 label: "128",
                                 icon: MessagesSquare,
-                                variant: tab === 9 ?  "default" : "secondary",
-                                tab: 9
+                                variant: tab === 10 ?  "default" : "secondary",
+                                tab: 10
                             },
                             {
                                 title: "Shopping",
                                 label: "8",
                                 icon: ShoppingCart,
-                                variant: tab === 10 ?  "default" : "secondary",
-                                tab: 10
+                                variant: tab === 11 ?  "default" : "secondary",
+                                tab: 11
                             },
                             {
                                 title: "Promotions",
                                 label: "21",
                                 icon: Archive,
-                                variant: tab === 11 ?  "default" : "secondary",
-                                tab: 11
+                                variant: tab === 12 ?  "default" : "secondary",
+                                tab: 12
                             },
                         ]}
                     />
