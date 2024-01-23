@@ -10,7 +10,7 @@ import { Nav } from '@/components/nav';
 
 import { accounts } from '@/utils/data';
 
-import { AlertCircle, Archive, ArchiveX, File, Inbox, MessagesSquare, Send, ShoppingCart, Trash2, Users2 } from 'lucide-react';
+import { AlertCircle, Archive, ArchiveX, File, Inbox, MessagesSquare, Send, ShoppingCart, Trash2, Users2, HomeIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -97,6 +97,12 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
                         tabActive={tab}
                         handleChangeTab={handleChangeTab}
                         links={[
+                            {
+                                title: "Home",
+                                icon: HomeIcon,
+                                variant: tab === 0 ?  "default" : "secondary",
+                                tab: 0,
+                            },
                             {
                                 title: "Inbox",
                                 label: "128",
