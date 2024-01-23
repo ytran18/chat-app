@@ -10,7 +10,7 @@ export default function page() {
 
     return (
         <DefaultLayout>
-            <ResizableHandle withHandle className='hidden md:flex'/>
+            <ResizableHandle withHandle/>
             <ResizablePanel className={`h-full`} defaultSize={910} minSize={30}>
                     <div className="flex items-center px-4 py-2">
                         <h1 className="text-xl font-bold">Drafts</h1>

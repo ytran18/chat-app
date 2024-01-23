@@ -9,8 +9,12 @@ import DefaultLayout from '@/components/default-layout';
 export default function Home() {
     return (
         <DefaultLayout>
-            <ResizableHandle withHandle className='hidden md:flex'/>
-            <ResizablePanel defaultSize={910}></ResizablePanel>
+            <ResizableHandle withHandle/>
+            <ResizablePanel defaultSize={910}>
+                <div className="flex items-center px-4 py-2">
+                        <h1 className="text-xl font-bold">Home</h1>
+                    </div>
+            </ResizablePanel>
         </DefaultLayout>
     );
 }

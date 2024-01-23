@@ -24,6 +24,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
 
     const [isCollapsed, setIsCollapsed] = React.useState(false);
     const [tab, setTab] = React.useState(0);
+    const [width, setWidth] = React.useState(0);
     const router = useRouter();
 
     React.useEffect(() => {
@@ -46,11 +47,13 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
     },[]);
 
     React.useEffect(() => {
+        setWidth(window.innerWidth);
         if (window.innerWidth < 768) setIsCollapsed(true);
     }, []);
     
     React.useEffect(() => {
         const handleResize = () => {
+            setWidth(window.innerWidth);
             if (window.innerWidth < 768) setIsCollapsed(true);
             if (window.innerWidth >= 768) setIsCollapsed(false);
         };
@@ -101,9 +104,9 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
                         setIsCollapsed(true)
                     }}
                     onExpand={() => {
-                        setIsCollapsed(false)
+                        width > 768 && setIsCollapsed(false)
                     }}
-                    className={cn(isCollapsed && "min-w-[50px] h-full transition-all duration-300 ease-in-out")}
+                    className={cn(isCollapsed && "min-w-[50px] h-full transition-all duration-300")}
                 >
                     <div className={cn("flex h-[52px] w-full items-center justify-center", isCollapsed ? 'h-[52px]': 'px-2')}>
                         <AccountSwitcher isCollapsed={isCollapsed} accounts={accounts} />
